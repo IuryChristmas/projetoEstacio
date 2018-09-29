@@ -110,10 +110,16 @@ public class Aplicacao {
  			break;
 			case 2:
 				System.out.println("== 2: EDITAR==================");
+				for (int i = 0; i <controleEventos.buscarTodos().size(); i++) {
+					System.out.println(controleEventos.buscarTodos().get(i).toString());
+				}
 				System.out.println("== INFORME O CODIGO ==========");
 				break;
 			case 3:
 				System.out.println("== 3: EXCLUIR==================");
+				for (int i = 0; i <controleEventos.buscarTodos().size(); i++) {
+					System.out.println(controleEventos.buscarTodos().get(i).toString());
+				}
 				System.out.println("== INFORME O CODIGO ==========");
 				int codigoExcluir = tc.nextInt();
 				Evento eventoParaExcluir = controleEventos.buscar(codigoExcluir);
