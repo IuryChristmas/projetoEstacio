@@ -115,6 +115,9 @@ public class Aplicacao {
 			case 3:
 				System.out.println("== 3: EXCLUIR==================");
 				System.out.println("== INFORME O CODIGO ==========");
+				int codigoExcluir = tc.nextInt();
+				Evento eventoParaExcluir = controleEventos.buscar(codigoExcluir);
+				controleEventos.remover(eventoParaExcluir);
 				break;
 			case 4:
 				System.out.println("== 4: BUSCAR==================");
