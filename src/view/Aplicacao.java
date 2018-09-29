@@ -30,9 +30,11 @@ public class Aplicacao {
 			System.out.println("================MENU=============");
 			System.out.println("===ESCOLHA UMA OPÇÃO=============");
 			System.out.println("== 1: CADASTRAR==================");
-			System.out.println("== 2: BUSCAR=====================");
-			System.out.println("== 3: LISTAR TODOS=====================");
-			System.out.println("== 4: SAIR==================");
+			System.out.println("== 2: EDITAR==================");
+			System.out.println("== 3: EXCLUIR==================");
+			System.out.println("== 4: BUSCAR=====================");
+			System.out.println("== 5: LISTAR TODOS=====================");
+			System.out.println("== 6: SAIR==================");
 			opcao = tc.nextInt();
 			switch(opcao)
 			{
@@ -107,23 +109,31 @@ public class Aplicacao {
 				
  			break;
 			case 2:
-				System.out.println("== 2: BUSCAR==================");
+				System.out.println("== 2: EDITAR==================");
+				System.out.println("== INFORME O CODIGO ==========");
+				break;
+			case 3:
+				System.out.println("== 3: EXCLUIR==================");
+				System.out.println("== INFORME O CODIGO ==========");
+				break;
+			case 4:
+				System.out.println("== 4: BUSCAR==================");
 				System.out.println("== INFORME O CODIGO ==========");
 				int codigoInformado = tc.nextInt();
 				Evento eventoEncontrado = controleEventos.buscar(codigoInformado);
 				System.out.println(eventoEncontrado.toString());
 				break;
-			case 3:
+			case 5:
 				for (int i = 0; i <controleEventos.buscarTodos().size(); i++) {
 					System.out.println(controleEventos.buscarTodos().get(i).toString());
 				}
 				break;
-			case 4:
+			case 6:
 				System.exit(0);
 				break;
 			}
 			
-		}while(opcao!=4);
+		}while(opcao!=6);
 
 	}
 
