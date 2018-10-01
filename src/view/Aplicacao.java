@@ -90,7 +90,6 @@ public class Aplicacao {
 					break;
 				case 4:
 					System.out.println("== INFORME O NOME DO ANIVERSARIANTE======");
-					tc.nextLine();
 					String nomeAniversariante = tc.nextLine();
 					System.out.println("== INFORME O LOCAL======");
 					local = tc.nextLine();
@@ -114,6 +113,21 @@ public class Aplicacao {
 					System.out.println(controleEventos.buscarTodos().get(i).toString());
 				}
 				System.out.println("== INFORME O CODIGO ==========");
+				int codigoEditar = tc.nextInt();
+				Evento eventoParaEditar = controleEventos.buscar(codigoEditar);
+				if(eventoParaEditar instanceof Aniversario) {
+					System.out.println("== INFORME O NOME DO ANIVERSARIANTE======");
+					((Aniversario) eventoParaEditar).setNomeAniversariante(tc.nextLine());
+					System.out.println("== INFORME O LOCAL======");
+					eventoParaEditar.setLocal(tc.nextLine());
+					System.out.println("== INFORME A DATA (DD/MM/AAAA)");
+					eventoParaEditar.setDataInicio(tc.nextLine());
+					System.out.println("== INFORME A HORA (HH:MM)======");
+					eventoParaEditar.setHoraInicio(tc.nextLine());
+					System.out.println("== INFORME A DATA DA FESTA (DD/MM/AAAA)");
+					((Aniversario) eventoParaEditar).setDataFesta(tc.nextLine());
+					controleEventos.editar(eventoParaEditar);
+				}
 				break;
 			case 3:
 				System.out.println("== 3: EXCLUIR==================");
