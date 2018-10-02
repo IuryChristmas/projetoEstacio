@@ -138,6 +138,28 @@ public class Aplicacao {
 					System.out.println("== O FERIADO É NACIONAL? (SIM/NÃO)======");
 					((Feriado) eventoParaEditar).setAbrangencia(tc.nextLine());
 					controleEventos.editar(eventoParaEditar);
+				} else if(eventoParaEditar instanceof Tarefa) {
+					System.out.println("== INFORME A DESCRIÇÃO DA TAREFA======");
+					tc.nextLine();
+					eventoParaEditar.setDescricao(tc.nextLine());
+					System.out.println("== INFORME O STATUS DA TAREFA(Concluida: S/N)======");
+					((Tarefa) eventoParaEditar).setStatus(tc.nextLine()=="S"?true:false);
+					System.out.println("== INFORME A DATA DE CONCLUSÃO (DD/MM/AAAA)");
+					eventoParaEditar.setDataTermino(tc.nextLine());
+					System.out.println("== INFORME A PRIORIDADE DA TAREFA(Alta/Media/Baixa)======");
+					((Tarefa) eventoParaEditar).setPrioridade(tc.nextLine());
+					controleEventos.editar(eventoParaEditar);
+				} else {
+					System.out.println("== INFORME O NOME DO EVENTO======");
+					tc.nextLine();
+					eventoParaEditar.setNome(tc.nextLine());
+					System.out.println("== INFORME O LOCAL======");
+					eventoParaEditar.setLocal(tc.nextLine());
+					System.out.println("== INFORME A DATA (DD/MM/AAAA)");
+					eventoParaEditar.setDataInicio(tc.nextLine());
+					System.out.println("== INFORME A HORA (HH:MM)======");
+					eventoParaEditar.setHoraInicio(tc.nextLine());
+					controleEventos.editar(eventoParaEditar);
 				}
 				break;
 			case 3:
