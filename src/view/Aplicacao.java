@@ -90,6 +90,7 @@ public class Aplicacao {
 					break;
 				case 4:
 					System.out.println("== INFORME O NOME DO ANIVERSARIANTE======");
+					tc.nextLine();
 					String nomeAniversariante = tc.nextLine();
 					System.out.println("== INFORME O LOCAL======");
 					local = tc.nextLine();
@@ -117,6 +118,7 @@ public class Aplicacao {
 				Evento eventoParaEditar = controleEventos.buscar(codigoEditar);
 				if(eventoParaEditar instanceof Aniversario) {
 					System.out.println("== INFORME O NOME DO ANIVERSARIANTE======");
+					tc.nextLine();
 					((Aniversario) eventoParaEditar).setNomeAniversariante(tc.nextLine());
 					System.out.println("== INFORME O LOCAL======");
 					eventoParaEditar.setLocal(tc.nextLine());
@@ -126,6 +128,15 @@ public class Aplicacao {
 					eventoParaEditar.setHoraInicio(tc.nextLine());
 					System.out.println("== INFORME A DATA DA FESTA (DD/MM/AAAA)");
 					((Aniversario) eventoParaEditar).setDataFesta(tc.nextLine());
+					controleEventos.editar(eventoParaEditar);
+				} else if(eventoParaEditar instanceof Feriado) {
+					System.out.println("== INFORME O NOME DO FERIADO======");
+					tc.nextLine();
+					eventoParaEditar.setNome(tc.nextLine());
+					System.out.println("== INFORME A DATA (DD/MM/AAAA)");
+					eventoParaEditar.setDataInicio(tc.nextLine());
+					System.out.println("== O FERIADO É NACIONAL? (SIM/NÃO)======");
+					((Feriado) eventoParaEditar).setAbrangencia(tc.nextLine());
 					controleEventos.editar(eventoParaEditar);
 				}
 				break;
